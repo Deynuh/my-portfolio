@@ -84,8 +84,8 @@ export default function Projects() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#E3F2FD] via-[#F8FAFC] to-[#DBEAFE] py-16 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-[#E3F2FD] via-[#F8FAFC] to-[#DBEAFE] py-16 px-6 pt-24">
+      <div className="max-w-4xl mx-auto">
         <Link 
           href="/" 
           className="inline-block mb-8 text-[#2B6CB0] hover:text-[#89CFF0] transition-colors font-semibold"
@@ -93,10 +93,10 @@ export default function Projects() {
           ← Back to Home
         </Link>
         
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-[#2B6CB0] to-[#89CFF0] bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#2B6CB0] to-[#89CFF0] bg-clip-text text-transparent">
           My Projects
         </h1>
-        <p className="text-xl text-[#1E293B] opacity-80 mb-8">
+        <p className="text-xl text-[#1E293B] opacity-80 mb-12">
           Explore my creative works and technical experiments
         </p>
 
