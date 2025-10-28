@@ -1,6 +1,12 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function About() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const certifications = [
     { 
       name: 'Unity Essentials Pathway', 
@@ -14,17 +20,29 @@ export default function About() {
 
   const musicProjects = [
     {
-      description: 'Brief description or caption for this moment.',
-      mediaType: 'video', // 'video' or 'image'
-      mediaUrl: '/your-video.mp4', // Put videos in public folder
+      description: 'I See Fire - Ed Sheeran',
+      mediaType: 'video',
+      mediaUrl: '/iseefire.mp4',
     },
     {
-      description: 'Another caption or memory.',
-      mediaType: 'image',
-      mediaUrl: '/path-to-your-image.jpg', // Put images in public folder
+      description: 'Talking to the Moon - Bruno Mars',
+      mediaType: 'video',
+      mediaUrl: '/talkingtothemoon.mp4',
     },
-    // Add more as needed
+    {
+      description: 'True Colors - Cyndi Lauper',
+      mediaType: 'video',
+      mediaUrl: '/truecolors.mp4',
+    },
   ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % musicProjects.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + musicProjects.length) % musicProjects.length);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#E3F2FD] via-[#F8FAFC] to-[#DBEAFE] py-16 px-6 pt-24">
@@ -73,31 +91,62 @@ export default function About() {
           <p className="text-[#1E293B] mb-6 opacity-90">
             Music is a big part of my life as I have been singing since I was little and playing guitar since I was 14.
           </p>
-          <div className="space-y-6">
-            {musicProjects.map((project, index) => (
-              <div key={index} className="bg-gradient-to-br from-white to-[#F8FAFC] rounded-xl p-4 shadow-sm">
-                {project.mediaType === 'video' ? (
-                  <div className="aspect-video w-full mb-3">
-                    <video
-                      width="100%"
-                      height="100%"
-                      controls
-                      className="rounded-lg"
-                    >
-                      <source src={project.mediaUrl} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                ) : (
-                  <img 
-                    src={project.mediaUrl} 
-                    alt={`Music memory ${index + 1}`}
-                    className="w-full rounded-lg shadow-sm mb-3"
-                  />
-                )}
-                <p className="text-[#1E293B] text-sm italic opacity-75">{project.description}</p>
+          
+          {/* Slideshow */}
+          <div className="relative bg-gradient-to-br from-white to-[#F8FAFC] rounded-xl p-4 shadow-sm">
+            {musicProjects[currentSlide].mediaType === 'video' ? (
+              <div className="aspect-video w-full mb-3">
+                <video
+                  key={currentSlide}
+                  width="100%"
+                  height="100%"
+                  controls
+                  className="rounded-lg"
+                >
+                  <source src={musicProjects[currentSlide].mediaUrl} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
-            ))}
+            ) : (
+              <img 
+                src={musicProjects[currentSlide].mediaUrl} 
+                alt={`Music memory ${currentSlide + 1}`}
+                className="w-full rounded-lg shadow-sm mb-3"
+              />
+            )}
+            <p className="text-[#1E293B] text-sm italic opacity-75 mb-4">{musicProjects[currentSlide].description}</p>
+            
+            {/* Navigation Buttons */}
+            <div className="flex items-center justify-between">
+              <button
+                onClick={prevSlide}
+                className="bg-[#2B6CB0] text-white p-2 rounded-full hover:bg-[#1E5A8E] transition-colors"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              
+              <div className="flex gap-2">
+                {musicProjects.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentSlide ? 'bg-[#2B6CB0] w-6' : 'bg-[#2B6CB0]/30'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+              
+              <button
+                onClick={nextSlide}
+                className="bg-[#2B6CB0] text-white p-2 rounded-full hover:bg-[#1E5A8E] transition-colors"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
