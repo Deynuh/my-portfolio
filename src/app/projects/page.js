@@ -93,7 +93,7 @@ export default function Projects() {
           ← Back to Home
         </Link>
         
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#2B6CB0] to-[#89CFF0] bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#2B6CB0] to-[#89CFF0] bg-clip-text text-transparent pb-5">
           My Projects
         </h1>
         <p className="text-xl text-[#1E293B] opacity-80 mb-12">
