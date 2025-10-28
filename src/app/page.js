@@ -25,7 +25,7 @@ export default function Home() {
           href="/projects"
           className="inline-block bg-[#2B6CB0] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#2563A8] transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >
-          View My Work
+          View My Projects
         </Link>
       </div>
     </div>
