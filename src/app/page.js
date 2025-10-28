@@ -16,10 +16,10 @@ export default function Home() {
           Dana
         </h1>
         <p className="text-2xl md:text-3xl font-semibold text-[#2B6CB0] mb-4">
-          Game Developer & Creative Technologist
+          Developer exploring games, sound, and interaction!
         </p>
         <p className="text-lg md:text-xl text-[#1E293B] opacity-80 mb-8 max-w-2xl mx-auto">
-          Blending technology, music, and emotion to create meaningful interactive experiences
+          Based in Vancouver, currently moving from interactive pieces to game development.
         </p>
         <Link
           href="/projects"
