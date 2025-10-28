@@ -3,10 +3,10 @@ import { Sparkles } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#E3F2FD] via-[#F8FAFC] to-[#89CFF0] opacity-40"></div>
-      <div className="absolute top-20 right-20 w-64 h-64 bg-[#89CFF0] rounded-full blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#2B6CB0] rounded-full blur-3xl opacity-10 animate-pulse delay-1000"></div>
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#E3F2FD] via-[#F8FAFC] to-[#DBEAFE] opacity-70"></div>
+      <div className="absolute top-20 right-20 w-64 h-64 bg-[#89CFF0] rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#60A5FA] rounded-full blur-3xl opacity-20 animate-pulse delay-1000"></div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="inline-block mb-6">
