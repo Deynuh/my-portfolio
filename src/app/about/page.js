@@ -12,6 +12,20 @@ export default function About() {
     }
   ];
 
+  const musicProjects = [
+    {
+      description: 'Brief description or caption for this moment.',
+      mediaType: 'video', // 'video' or 'image'
+      mediaUrl: '/your-video.mp4', // Put videos in public folder
+    },
+    {
+      description: 'Another caption or memory.',
+      mediaType: 'image',
+      mediaUrl: '/path-to-your-image.jpg', // Put images in public folder
+    },
+    // Add more as needed
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#E3F2FD] via-[#F8FAFC] to-[#DBEAFE] py-16 px-6">
       <div className="max-w-4xl mx-auto">
@@ -34,7 +48,7 @@ export default function About() {
         
           <h2 className="text-2xl font-semibold text-[#2B6CB0] mt-8 mb-4">Skills & Technologies</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {['Unity', 'C#', 'Java', 'JavaScript', 'React', 'Next.js', 'Game Design', 'Sound Design', 'UI/UX', 'Max'].map((skill) => (
+            {['Unity', 'C#', 'Java', 'JavaScript', 'React', 'Game Design', 'Sound Design', 'UI/UX', 'Max'].map((skill) => (
               <div key={skill} className="bg-[#E3F2FD] px-4 py-2 rounded-lg text-center text-[#2B6CB0] font-medium">
                 {skill}
               </div>
@@ -52,6 +66,37 @@ export default function About() {
               >
                 {cert.name} →
               </a>
+            ))}
+          </div>
+
+          <h2 className="text-2xl font-semibold text-[#2B6CB0] mt-8 mb-4">Music</h2>
+          <p className="text-[#1E293B] mb-6 opacity-90">
+            Music is a big part of my life as I have been singing since I was little and playing guitar since I was 14.
+          </p>
+          <div className="space-y-6">
+            {musicProjects.map((project, index) => (
+              <div key={index} className="bg-gradient-to-br from-white to-[#F8FAFC] rounded-xl p-4 shadow-sm">
+                {project.mediaType === 'video' ? (
+                  <div className="aspect-video w-full mb-3">
+                    <video
+                      width="100%"
+                      height="100%"
+                      controls
+                      className="rounded-lg"
+                    >
+                      <source src={project.mediaUrl} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                ) : (
+                  <img 
+                    src={project.mediaUrl} 
+                    alt={`Music memory ${index + 1}`}
+                    className="w-full rounded-lg shadow-sm mb-3"
+                  />
+                )}
+                <p className="text-[#1E293B] text-sm italic opacity-75">{project.description}</p>
+              </div>
             ))}
           </div>
         </div>
