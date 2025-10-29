@@ -325,7 +325,9 @@ export default function Projects() {
 
                 {selectedProject.links && (
                   <div className="mb-6">
-                    <h3 className="text-xl font-semibold text-[#2B6CB0] mb-3">Links</h3>
+                    <h3 className="text-xl font-semibold text-[#2B6CB0] mb-3">
+                      {selectedProject.links.length === 1 ? 'Link' : 'Links'}
+                    </h3>
                     <div className="flex flex-wrap gap-3">
                       {selectedProject.links.map((link, i) => (
                         <a
