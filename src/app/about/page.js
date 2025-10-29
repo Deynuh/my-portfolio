@@ -9,6 +9,7 @@ export default function About() {
   const [currentVolleyballSlide, setCurrentVolleyballSlide] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const videoRef = useRef(null);
 
   const certifications = [
@@ -118,7 +119,7 @@ export default function About() {
           {/* Profile Image with Peony Flower */}
           <div className="relative flex justify-center mb-5 py-1">
             {/* Peony flower shape background */}
-            <div className="absolute inset-0 flex justify-center items-center">
+            <div className={`absolute inset-0 flex justify-center items-center transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
               <div className="relative w-[500px] h-[500px]">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   
@@ -160,6 +161,7 @@ export default function About() {
                 src="/transparentme.png" 
                 alt="Dana"
                 className="w-48 h-auto"
+                onLoad={() => setImageLoaded(true)}
               />
             </div>
           </div>
