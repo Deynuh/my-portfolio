@@ -23,19 +23,19 @@ export default function Projects() {
     webApps: [
       {
         title: "DAhandler",
-        description: "Legal workflow automation tool that syncs with Outlook calendars to streamline trial event management. Saves 10+ hours weekly for a team of 20+ legal professionals.",
+        description: "Legal workflow automation tool that syncs with Outlook calendars to streamline trial event management.",
         tech: ["Vue.js", "JavaScript", "Python", "HTML/CSS", "Outlook API"],
         color: "from-orange-500 to-amber-400",
         image: "/dahandler.png",
-        furtherInfo: "Developed the front-end component and a bit of the back-end component to ensure a pleasant user experience and seamless calendar integration for legal teams. For company privacy reasons, I am unable to provide links to the repository and app.",
+        furtherInfo: "Developed the front-end component and a bit of the back-end component to ensure a pleasant user experience and seamless calendar integration for legal teams. Saves 10+ hours weekly for a team of 20+ legal professionals. For company privacy reasons, I am unable to provide links to the repository and app.",
       },
       {
         title: "Litigation Checklist Calculator",
-        description: "Dates and deadlines calculator for legal teams that reduces scheduling conflicts during high-volume case periods. Built in 3 days with a responsive, user-friendly interface for 20+ legal professionals.",
+        description: "Dates and deadlines calculator for legal teams that reduces scheduling conflicts during high-volume case periods.",
         tech: ["React", "Vite", "HTML", "CSS"],
         color: "from-orange-600 to-orange-400",
         image: "/litchecklist.png",
-        furtherInfo: "Developed a responsive, user-friendly interface that accommodates the needs of legal professionals. Ensured that special dates such as public holidays are taken into account.",
+        furtherInfo: "Developed a responsive, user-friendly interface that accommodates the needs of legal professionals. Built in 3 days with a responsive, user-friendly interface for 20+ legal professionals. Ensured that special dates such as public holidays are taken into account.",
         links: [
           { label: "Website", url: "https://deynuh.github.io/Litigation-Checklist-Calculator/", icon: true},
           { label: "GitHub Repo", url: "https://github.com/Deynuh/Litigation-Checklist-Calculator", iconImage: "/github.png"}
@@ -43,11 +43,11 @@ export default function Projects() {
       },
       {
         title: "AMT Portfolio",
-        description: "Portfolio showcasing my works in Applied Music Technology. My first attempt at creating a responsive website portfolio.",
+        description: "Portfolio showcasing my works in Applied Music Technology.",
         tech: ["React", "Vite", "HTML", "CSS"],
         color: "from-amber-500 to-yellow-400",
         image: "/amtportfolio.png",
-        furtherInfo: "Showcased my skills in web development and design through a personal portfolio website. Implemented responsive design principles to ensure a seamless experience across devices.",
+        furtherInfo: " My first attempt at creating a responsive website portfolio. Showcased my skills in web development and design through a personal portfolio website. Implemented responsive design principles to ensure a seamless experience across devices.",
         links: [
           { label: "Website", url: "https://deynuh.github.io/amt-portfolio/", icon: true},
           { label: "GitHub Repo", url: "https://github.com/Deynuh/amt-portfolio", iconImage: "/github.png"}
@@ -68,60 +68,66 @@ export default function Projects() {
     musicTech: [
       {
         title: "LoopMax",
-        description: "Live performance audio looper with real-time effects processing. Features 15 simultaneous loops, modular patch system with count-in and metronome.",
+        description: "Live performance audio looper with real-time effects processing.",
         tech: ["Max", "Jitter", "Audio Processing"],
         color: "from-purple-500 to-pink-500",
         image: "/loopmax.jpg", //maybe add performance video if can still find
+        furtherInfo: "Developed a live performance audio looper with real-time effects processing. Features 15 simultaneous loops, modular patch system with count-in and metronome.",
         links: [
           { label: "Project Website", url: "https://dneria1.wixsite.com/loopmax", icon: true}
         ]
       },
       {
         title: "Shrinking Islands",
-        description: "Interactive musical performance piece using Xbox Kinect to track dancer movements in Max. Premiered to 80+ attendees at University of the Philippines Diliman after a 2-week creative residency.",
+        description: "Interactive musical performance piece featuring a visual representation of a sinking island controlled by dancer movements.",
         tech: ["Max", "Unity", "C#"],
         color: "from-pink-500 to-purple-400",
         image: "/island.jpg", //ADD CREDITS TO THE IMAGE, also add more photos and explanation that it was streamed live but not recorded
+        furtherInfo: "Created an interactive performance piece where dancer movements control audio-visual elements (such as lightning and rain speed) in real-time using Xbox Kinect and Max/MSP. Gained valuable knowledge on Cinemachine and Unity assets. Developed during a 2-week creative residency at the University of Philippines Diliman culminating in a live performance for 80+ attendees.",
         links: [
           { label: "Creative Residency Video", url: "https://www.youtube.com/watch?v=2uWa_zclqPQ", iconImage: "/youtube.png"}
         ]
       },
       {
         title: "The Pianist",
-        description: "Interactive audio-visual performance piece using Xbox Kinect to track dancer movements in real-time. Transforms a Unity piano into an audio-reactive instrument with particle systems and adaptive lighting responding to musical intensity.",
+        description: "Interactive audio-visual performance piece featuring a virtual piano controlled by a live pianist as well as a particle system manipulated by tracked dancer movements.",
         tech: ["Max", "Unity", "C#"],
         color: "from-purple-500 to-pink-500",
         image: "/piano.jpg", //ADD CREDITS TO THE IMAGE
+        furtherInfo: "Transforms a Unity piano into an audio-reactive instrument that roughly follows what the live pianist plays. The secondary interactive element includes particle systems that respond to dancer movements.",
         links: [
           { label: "Performance Video", url: "https://www.youtube.com/watch?v=RNM0_BtZe2Y", iconImage: "/youtube.png"}
         ]
       },
       {
         title: "Bells",
-        description: "Motion-tracked performance piece with custom granular synthesis. Dancer movements control a Gen-based synthesizer programmed in CodeBox.",
+        description: "Motion-tracked performance piece with custom granular synthesis.",
         tech: ["Max", "Gen"],
         color: "from-purple-600 to-purple-400",
         image: "/bells.png",
+        furtherInfo: "Dancer movements control a Gen-based synthesizer programmed in Max using CodeBox.",
         links: [
           { label: "Performance Video", url: "https://www.youtube.com/watch?v=ug2vfM7eUQk", iconImage: "/youtube.png"}
         ]
       },
       {
         title: "CosmicEchoes",
-        description: "5-minute interactive musical performance using Xbox Kinect to track dancer movements. Created dancer-controlled video elements in Jitter that respond to real-time motion data.",
+        description: "Interactive musical performance featuring visual representations of different planets.",
         tech: ["Max", "Jitter"],
         color: "from-pink-600 to-purple-500",
         image: "/cosmicechoes.png",
+        furtherInfo: "5-minute interactive musical performance using Xbox Kinect to track dancer movements. Created dancer-controlled video elements in Jitter that respond to real-time motion data.",
         links: [
           { label: "Performance Video", url: "https://www.youtube.com/watch?v=w0Dtyzz1HA8", iconImage: "/youtube.png"}
         ]
       },
       {
         title: "Dissociation",
-        description: "Live contemporary music piece featuring precisely timed vocal sample processing and manipulation. Performed and controlled voice line edits throughout the performance.",
+        description: "Live performance piece featuring precisely timed vocal sample processing and manipulation.",
         tech: ["Max/MSP", "Live Audio Processing"],
         color: "from-purple-600 to-purple-400",
         image: "/dissociation.png", 
+        furtherInfo: "Controlled voice line edits and manipulation throughout the performance.",
         links: [
           { label: "Performance Video", url: "https://www.youtube.com/watch?v=eNm__0OqPkI", iconImage: "/youtube.png"}
         ]
@@ -130,11 +136,12 @@ export default function Projects() {
     games: [
       {
         title: "Death Kitchen",
-        description: "Fast-paced co-op cooking horror game where players serve dangerous alien customers. Recently joined the development team to contribute to character systems and multiplayer mechanics.",
+        description: "Fast-paced co-op cooking horror game where players serve dangerous alien customers.",
         tech: ["Unity", "C#", "Multiplayer"],
         color: "from-emerald-500 to-teal-500",
         image: "/deathkitchen.jpg",
         inDevelopment: true,
+        furtherInfo: "Recently joined and started collaborating with a small indie team to enhance character control systems and implement robust multiplayer functionality using Unity's Netcode for GameObjects. Focused on creating smooth, responsive gameplay mechanics that enhance the cooperative experience.",
         links: [
           { label: "Steam Page", url: "https://store.steampowered.com/app/3603380/Death_Kitchen/", iconImage: "/steam.png" }, 
           { label: "Studio Page", url: "https://www.gamedevelopment.ca/studio", icon: true}
