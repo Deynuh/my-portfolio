@@ -124,7 +124,7 @@ export default function Projects() {
       {
         title: "Dissociation",
         description: "Live performance piece featuring precisely timed vocal sample processing and manipulation.",
-        tech: ["Max/MSP", "Live Audio Processing"],
+        tech: ["Max", "Live Audio Processing"],
         color: "from-purple-600 to-purple-400",
         image: "/dissociation.png", 
         furtherInfo: "Controlled voice line edits and manipulation throughout the performance.",
