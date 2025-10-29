@@ -26,7 +26,8 @@ export default function Projects() {
         description: "Legal workflow automation tool that syncs with Outlook calendars to streamline trial event management. Saves 10+ hours weekly for a team of 20+ legal professionals.",
         tech: ["Vue.js", "JavaScript", "Python", "HTML/CSS", "Outlook API"],
         color: "from-orange-500 to-amber-400",
-        image: "/dahandler.png"
+        image: "/dahandler.png",
+        furtherInfo: "Developed the front-end component and a bit of the back-end component to ensure a pleasant user experience and seamless calendar integration for legal teams. For company privacy reasons, I am unable to provide links to the repository and app.",
       },
       {
         title: "Litigation Checklist Calculator",
@@ -34,6 +35,7 @@ export default function Projects() {
         tech: ["React", "Vite", "HTML", "CSS"],
         color: "from-orange-600 to-orange-400",
         image: "/litchecklist.png",
+        furtherInfo: "Developed a responsive, user-friendly interface that accommodates the needs of legal professionals. Ensured that special dates such as public holidays are taken into account.",
         links: [
           { label: "Website", url: "https://deynuh.github.io/Litigation-Checklist-Calculator/", icon: true},
           { label: "GitHub Repo", url: "https://github.com/Deynuh/Litigation-Checklist-Calculator", iconImage: "/github.png"}
@@ -45,6 +47,7 @@ export default function Projects() {
         tech: ["React", "Vite", "HTML", "CSS"],
         color: "from-amber-500 to-yellow-400",
         image: "/amtportfolio.png",
+        furtherInfo: "Showcased my skills in web development and design through a personal portfolio website. Implemented responsive design principles to ensure a seamless experience across devices.",
         links: [
           { label: "Website", url: "https://deynuh.github.io/amt-portfolio/", icon: true},
           { label: "GitHub Repo", url: "https://github.com/Deynuh/amt-portfolio", iconImage: "/github.png"}
@@ -56,6 +59,7 @@ export default function Projects() {
         tech: ["Java", "JUnit", "Swing GUI"],
         color: "from-amber-500 to-yellow-400",
         image: "/whatscookin.png",
+        furtherInfo: "Developed a Java Swing application that allows users to manage recipes and restaurants. Implemented a randomizatrion system that suggests meals based on saved restaurants and recipes.",
         links: [
           { label: "GitHub Repo", url: "https://github.com/Deynuh/WhatsCookin", iconImage: "/github.png"}
         ]
@@ -241,11 +245,11 @@ export default function Projects() {
         {/* Modal */}
         {isModalOpen && selectedProject && (
           <div 
-            className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
             onClick={closeModal}
           >
             <div 
-              className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+              className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl scroll-smooth"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
