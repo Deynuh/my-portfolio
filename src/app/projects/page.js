@@ -2,9 +2,22 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { ExternalLink } from 'lucide-react';
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
 
   const projectCategories = {
     webApps: [
@@ -18,19 +31,22 @@ export default function Projects() {
         title: "Litigation Checklist Calculator",
         description: "Dates and deadlines calculator for legal teams that reduces scheduling conflicts during high-volume case periods. Built in 3 days with a responsive, user-friendly interface for 20+ legal professionals.",
         tech: ["React", "Vite", "HTML", "CSS"],
-        color: "from-orange-600 to-orange-400"
+        color: "from-orange-600 to-orange-400",
+        image: "/litchecklist.png"
       },
       {
         title: "AMT Portfolio",
         description: "Portfolio showcasing my works in Applied Music Technology. My first attempt at creating a responsive website portfolio.",
         tech: ["React", "Vite", "HTML", "CSS"],
-        color: "from-amber-500 to-yellow-400" 
+        color: "from-amber-500 to-yellow-400",
+        image: "/amtportfolio.png"
       },
       {
         title: "What's Cookin'?",
         description: "A recipe and restaurant manager that decides a user’s meal based on stored recipes and restaurants.",
         tech: ["Java", "JUnit", "Swing GUI"],
-        color: "from-amber-500 to-yellow-400" 
+        color: "from-amber-500 to-yellow-400",
+        image: "/whatscookin.png"
       },
     ],
     musicTech: [
@@ -38,37 +54,43 @@ export default function Projects() {
         title: "LoopMax",
         description: "Live performance audio looper with real-time effects processing. Features 15 simultaneous loops, modular patch system with count-in and metronome.",
         tech: ["Max", "Jitter", "Audio Processing"],
-        color: "from-purple-500 to-pink-500" 
+        color: "from-purple-500 to-pink-500",
+        image: "/loopmax.jpg" 
       },
       {
         title: "Shrinking Islands",
         description: "Interactive musical performance piece using Xbox Kinect to track dancer movements in Max. Premiered to 80+ attendees at University of the Philippines Diliman after a 2-week creative residency.",
         tech: ["Max", "Unity", "C#"],
-        color: "from-pink-500 to-purple-400"
+        color: "from-pink-500 to-purple-400",
+        image: "/island.jpg" //ADD CREDITS TO THE IMAGE
       },
       {
         title: "The Pianist",
         description: "Interactive audio-visual performance piece using Xbox Kinect to track dancer movements in real-time. Transforms a Unity piano into an audio-reactive instrument with particle systems and adaptive lighting responding to musical intensity.",
         tech: ["Max", "Unity", "C#"],
-        color: "from-purple-500 to-pink-500"
+        color: "from-purple-500 to-pink-500",
+        image: "/piano.jpg" //ADD CREDITS TO THE IMAGE
       },
       {
         title: "Bells",
         description: "Motion-tracked performance piece with custom granular synthesis. Dancer movements control a Gen-based synthesizer programmed in CodeBox.",
         tech: ["Max", "Gen"],
-        color: "from-purple-600 to-purple-400" 
+        color: "from-purple-600 to-purple-400",
+        image: "/bells.png"
       },
       {
         title: "CosmicEchoes",
         description: "5-minute interactive musical performance using Xbox Kinect to track dancer movements. Created dancer-controlled video elements in Jitter that respond to real-time motion data.",
         tech: ["Max", "Jitter"],
-        color: "from-pink-600 to-purple-500" 
+        color: "from-pink-600 to-purple-500",
+        image: "/cosmicechoes.png"
       },
       {
         title: "Dissociation",
         description: "Live contemporary music piece featuring precisely timed vocal sample processing and manipulation. Performed and controlled voice line edits throughout the performance.",
         tech: ["Max/MSP", "Live Audio Processing"],
-        color: "from-purple-600 to-purple-400" 
+        color: "from-purple-600 to-purple-400",
+        image: "/dissociation.png"
       }
     ],
     games: [
@@ -77,32 +99,55 @@ export default function Projects() {
         description: "Fast-paced co-op cooking horror game where players serve dangerous alien customers. Recently joined the development team to contribute to character systems and multiplayer mechanics.",
         tech: ["Unity", "C#", "Multiplayer"],
         color: "from-emerald-500 to-teal-500",
-        inDevelopment: true
+        image: "/deathkitchen.jpg",
+        inDevelopment: true,
+        links: [
+          { label: "Steam Page", url: "https://store.steampowered.com/app/3603380/Death_Kitchen/", iconImage: "/steam.png" }
+        ]
       }
     ]
   };
 
   const ProjectCard = ({ project }) => (
-    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-      <div className="flex items-center gap-3 mb-4">
-        <div className={`h-2 w-16 bg-gradient-to-r ${project.color} rounded-full`}></div>
-        {project.inDevelopment && (
-          <span className="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-semibold">
-            In Development
-          </span>
-        )}
-      </div>
-      <h3 className="text-2xl font-bold text-[#2B6CB0] mb-3">{project.title}</h3>
-      <p className="text-[#1E293B] mb-4 leading-relaxed">{project.description}</p>
-      <div className="flex flex-wrap gap-2">
-        {project.tech.map((tech, i) => (
-          <span 
-            key={i} 
-            className="text-xs bg-[#E3F2FD] text-[#2B6CB0] px-3 py-1 rounded-full font-medium"
-          >
-            {tech}
-          </span>
-        ))}
+    <div 
+      className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
+      onClick={() => openModal(project)}
+    >
+      {/* Project Image/Banner */}
+      {project.image && (
+        <div className="w-full h-48 overflow-hidden">
+          <img 
+            src={project.image} 
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
+      
+      <div className="p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <div className={`h-2 w-16 bg-gradient-to-r ${project.color} rounded-full`}></div>
+          {project.inDevelopment && (
+            <span className="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-semibold">
+              In Development
+            </span>
+          )}
+        </div>
+        <h3 className="text-2xl font-bold text-[#2B6CB0] mb-3">{project.title}</h3>
+        <p className="text-[#1E293B] mb-4 leading-relaxed">{project.description}</p>
+        <div className="flex flex-wrap gap-2">
+          {project.tech.map((tech, i) => (
+            <span 
+              key={i} 
+              className="text-xs bg-[#E3F2FD] text-[#2B6CB0] px-3 py-1 rounded-full font-medium"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+        <div className="mt-4 text-[#2B6CB0] text-sm font-semibold">
+          Click for more details →
+        </div>
       </div>
     </div>
   );
@@ -161,6 +206,119 @@ export default function Projects() {
             <ProjectCard key={index} project={project} />
           ))}
         </div>
+
+        {/* Modal */}
+        {isModalOpen && selectedProject && (
+          <div 
+            className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+            onClick={closeModal}
+          >
+            <div 
+              className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="sticky top-0 bg-white border-b border-gray-200 px-8 py-6 rounded-t-3xl">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className={`h-2 w-20 bg-gradient-to-r ${selectedProject.color} rounded-full`}></div>
+                      {selectedProject.inDevelopment && (
+                        <span className="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-semibold">
+                          In Development
+                        </span>
+                      )}
+                    </div>
+                    <h2 className="text-4xl font-bold text-[#2B6CB0]">{selectedProject.title}</h2>
+                  </div>
+                  <button
+                    onClick={closeModal}
+                    className="text-gray-400 hover:text-gray-600 text-4xl font-light leading-none ml-4"
+                    aria-label="Close"
+                  >
+                    ×
+                  </button>
+                </div>
+              </div>
+
+              {/* Modal Content */}
+              <div className="px-8 py-6">
+                {/* Project Image/Banner */}
+                {selectedProject.image && (
+                  <div className="mb-6 -mx-8 -mt-6">
+                    <img 
+                      src={selectedProject.image} 
+                      alt={selectedProject.title}
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                )}
+
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-[#2B6CB0] mb-3">Overview</h3>
+                  <p className="text-[#1E293B] leading-relaxed">{selectedProject.description}</p>
+                </div>
+
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-[#2B6CB0] mb-3">Technologies</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.tech.map((tech, i) => (
+                      <span 
+                        key={i} 
+                        className="bg-[#E3F2FD] text-[#2B6CB0] px-4 py-2 rounded-full font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Additional Details Section - You can customize per project */}
+                {selectedProject.details && (
+                  <div className="mb-6">
+                    <h3 className="text-xl font-semibold text-[#2B6CB0] mb-3">Details</h3>
+                    <p className="text-[#1E293B] leading-relaxed whitespace-pre-line">{selectedProject.details}</p>
+                  </div>
+                )}
+
+                {selectedProject.achievements && (
+                  <div className="mb-6">
+                    <h3 className="text-xl font-semibold text-[#2B6CB0] mb-3">Key Achievements</h3>
+                    <ul className="list-disc list-inside space-y-2 text-[#1E293B]">
+                      {selectedProject.achievements.map((achievement, i) => (
+                        <li key={i}>{achievement}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {selectedProject.links && (
+                  <div className="mb-6">
+                    <h3 className="text-xl font-semibold text-[#2B6CB0] mb-3">Links</h3>
+                    <div className="flex flex-wrap gap-3">
+                      {selectedProject.links.map((link, i) => (
+                        <a
+                          key={i}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-[#2B6CB0] text-white px-6 py-2 rounded-full font-medium hover:bg-[#1E5A8E] transition-colors flex items-center gap-2"
+                        >
+                          {link.iconImage && (
+                            <img src={link.iconImage} alt="" className="w-5 h-5 brightness-0 invert" />
+                          )}
+                          {link.icon && !link.iconImage && <ExternalLink size={18} />}
+                          {link.label}
+                          {!link.icon && !link.iconImage && ' →'}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
