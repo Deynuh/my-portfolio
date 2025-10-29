@@ -33,6 +33,14 @@ export default function About() {
       description: 'True Colors - Cyndi Lauper',
       mediaType: 'video',
       mediaUrl: '/truecolors.mp4',
+    },{
+      description: 'No Time to Die - Billie Eilish',
+      mediaType: 'video',
+      mediaUrl: '/notimetodie.mp4',
+    },{
+      description: 'Vampire - Olivia Rodrigo',
+      mediaType: 'video',
+      mediaUrl: '/vampire.mp4',
     },
   ];
 
@@ -89,7 +97,10 @@ export default function About() {
 
           <h2 className="text-2xl font-semibold text-[#2B6CB0] mt-8 mb-4">Music</h2>
           <p className="text-[#1E293B] mb-6 opacity-90">
-            Music is a big part of my life as I have been singing since I was little and playing guitar since I was 14.
+            Music is a big part of my life as I've been singing since I was little and playing guitar since I was 14.
+            Throughout high school, I performed in events like busking and concerts.
+            I wanted to make sure I continued to nurture this passion alongside my tech interests, so I pursued a minor in Applied Music Technology at UBC.
+            I also joined the UBC Music Initiative Club, where I met fellow music enthusiasts and had the chance to make music together!
           </p>
           
           {/* Slideshow */}
