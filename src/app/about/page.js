@@ -172,7 +172,7 @@ export default function About() {
           {/* Download Resume Button */}
           <div className="mt-8">
             <a
-              href="/resume.pdf"
+              href="/DanaNeriaResume.pdf"
               download
               className="inline-flex items-center gap-2 bg-[#2B6CB0] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1E5A8E] transition-colors shadow-lg hover:shadow-xl"
             >
