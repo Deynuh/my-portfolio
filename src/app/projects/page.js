@@ -9,51 +9,89 @@ export default function Projects() {
   const projectCategories = {
     webApps: [
       {
-        title: "Web Project One",
-        description: "A creative web experience pushing boundaries.",
-        tech: ["React", "Three.js", "WebGL"],
-        color: "from-[#60A5FA] to-[#89CFF0]"
+        title: "DAhandler",
+        description: "Legal workflow automation tool that syncs with Outlook calendars to streamline trial event management. Saves 10+ hours weekly for a team of 20+ legal professionals.",
+        tech: ["Vue.js", "JavaScript", "Python", "HTML/CSS", "Outlook API"],
+        color: "from-orange-500 to-amber-400" 
       },
       {
-        title: "Web Project Two",
-        description: "Interactive portfolio showcasing creative coding.",
-        tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-        color: "from-[#89CFF0] to-[#2B6CB0]"
-      }
+        title: "Litigation Checklist Calculator",
+        description: "Dates and deadlines calculator for legal teams that reduces scheduling conflicts during high-volume case periods. Built in 3 days with a responsive, user-friendly interface for 20+ legal professionals.",
+        tech: ["React", "Vite", "HTML", "CSS"],
+        color: "from-orange-600 to-orange-400"
+      },
+      {
+        title: "AMT Portfolio",
+        description: "Portfolio showcasing my works in Applied Music Technology. My first attempt at creating a responsive website portfolio.",
+        tech: ["React", "Vite", "HTML", "CSS"],
+        color: "from-amber-500 to-yellow-400" 
+      },
+      {
+        title: "What's Cookin'?",
+        description: "A recipe and restaurant manager that decides a user’s meal based on stored recipes and restaurants.",
+        tech: ["Java", "JUnit", "Swing GUI"],
+        color: "from-amber-500 to-yellow-400" 
+      },
     ],
     musicTech: [
       {
-        title: "Music Tech Project One",
-        description: "Interactive audio visualization and manipulation tool.",
-        tech: ["Max/MSP", "Pure Data", "Web Audio API"],
-        color: "from-[#89CFF0] to-[#60A5FA]"
+        title: "LoopMax",
+        description: "Live performance audio looper with real-time effects processing. Features 15 simultaneous loops, modular patch system with count-in and metronome.",
+        tech: ["Max", "Jitter", "Audio Processing"],
+        color: "from-purple-500 to-pink-500" 
       },
       {
-        title: "Music Tech Project Two",
-        description: "Procedural music generation system.",
-        tech: ["JavaScript", "Tone.js", "MIDI"],
-        color: "from-[#2B6CB0] to-[#89CFF0]"
+        title: "Shrinking Islands",
+        description: "Interactive musical performance piece using Xbox Kinect to track dancer movements in Max. Premiered to 80+ attendees at University of the Philippines Diliman after a 2-week creative residency.",
+        tech: ["Max", "Unity", "C#"],
+        color: "from-pink-500 to-purple-400"
+      },
+      {
+        title: "The Pianist",
+        description: "Interactive audio-visual performance piece using Xbox Kinect to track dancer movements in real-time. Transforms a Unity piano into an audio-reactive instrument with particle systems and adaptive lighting responding to musical intensity.",
+        tech: ["Max", "Unity", "C#"],
+        color: "from-purple-500 to-pink-500"
+      },
+      {
+        title: "Bells",
+        description: "Motion-tracked performance piece with custom granular synthesis. Dancer movements control a Gen-based synthesizer programmed in CodeBox.",
+        tech: ["Max", "Gen"],
+        color: "from-purple-600 to-purple-400" 
+      },
+      {
+        title: "CosmicEchoes",
+        description: "5-minute interactive musical performance using Xbox Kinect to track dancer movements. Created dancer-controlled video elements in Jitter that respond to real-time motion data.",
+        tech: ["Max", "Jitter"],
+        color: "from-pink-600 to-purple-500" 
+      },
+      {
+        title: "Dissociation",
+        description: "Live contemporary music piece featuring precisely timed vocal sample processing and manipulation. Performed and controlled voice line edits throughout the performance.",
+        tech: ["Max/MSP", "Live Audio Processing"],
+        color: "from-purple-600 to-purple-400" 
       }
     ],
     games: [
       {
-        title: "Game Project One",
-        description: "An immersive game experience blending music and gameplay.",
-        tech: ["Unity", "C#", "FMOD"],
-        color: "from-[#2B6CB0] to-[#89CFF0]"
-      },
-      {
-        title: "Game Project Two",
-        description: "Interactive storytelling with emotional depth.",
-        tech: ["Unreal Engine", "Blueprint", "Sound Design"],
-        color: "from-[#60A5FA] to-[#2B6CB0]"
+        title: "Death Kitchen",
+        description: "Fast-paced co-op cooking horror game where players serve dangerous alien customers. Recently joined the development team to contribute to character systems and multiplayer mechanics.",
+        tech: ["Unity", "C#", "Multiplayer"],
+        color: "from-emerald-500 to-teal-500",
+        inDevelopment: true
       }
     ]
   };
 
   const ProjectCard = ({ project }) => (
     <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-      <div className={`h-2 w-16 bg-gradient-to-r ${project.color} rounded-full mb-4`}></div>
+      <div className="flex items-center gap-3 mb-4">
+        <div className={`h-2 w-16 bg-gradient-to-r ${project.color} rounded-full`}></div>
+        {project.inDevelopment && (
+          <span className="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-semibold">
+            In Development
+          </span>
+        )}
+      </div>
       <h3 className="text-2xl font-bold text-[#2B6CB0] mb-3">{project.title}</h3>
       <p className="text-[#1E293B] mb-4 leading-relaxed">{project.description}</p>
       <div className="flex flex-wrap gap-2">
