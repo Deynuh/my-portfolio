@@ -165,10 +165,26 @@ export default function About() {
           </div>
 
           <p className="text-lg text-[#1E293B] leading-relaxed">
-            Hi! I’m Dana, I’m a University of British Columbia student majoring in Cognitive Systems and minoring in Applied Music Technology. 
-            I love coding, music, and gaming! Throughout my degree, I have created interactive sound experiences through coding and design, and I’m currently expanding my skills toward game development. 
+            Hi! I'm Dana, I'm a University of British Columbia student majoring in Cognitive Systems and minoring in Applied Music Technology. 
+            I love coding, music, and gaming! Throughout my degree, I have created interactive sound experiences through coding and design, and I'm currently expanding my skills toward game development. 
             Eventually, I want to bring creative systems to life in immersive, playable worlds! In my spare time nowadays, I like to read books and play PC games.</p>
         
+          {/* Download Resume Button */}
+          <div className="mt-8">
+            <a
+              href="/resume.pdf"
+              download
+              className="inline-flex items-center gap-2 bg-[#2B6CB0] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1E5A8E] transition-colors shadow-lg hover:shadow-xl"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download Resume
+            </a>
+          </div>
+
           <h2 className="text-2xl font-semibold text-[#2B6CB0] mt-8 mb-4">Skills & Technologies</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {['Unity', 'C#', 'Java', 'JavaScript', 'React', 'Game Design', 'Sound Design', 'UI/UX', 'Max'].map((skill) => (

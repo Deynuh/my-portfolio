@@ -312,6 +312,13 @@ export default function Projects() {
                   </div>
                 )}
 
+                {selectedProject.furtherInfo && (
+                  <div className="mb-6">
+                    <h3 className="text-xl font-semibold text-[#2B6CB0] mb-3">Further Information</h3>
+                    <p className="text-[#1E293B] leading-relaxed whitespace-pre-line">{selectedProject.furtherInfo}</p>
+                  </div>
+                )}
+
                 {selectedProject.achievements && (
                   <div className="mb-6">
                     <h3 className="text-xl font-semibold text-[#2B6CB0] mb-3">Key Achievements</h3>
