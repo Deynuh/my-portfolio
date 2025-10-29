@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function About() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentVolleyballSlide, setCurrentVolleyballSlide] = useState(0);
 
   const certifications = [
     { 
@@ -44,12 +45,42 @@ export default function About() {
     },
   ];
 
+  const volleyballPics = [
+    {
+      description: 'UBC Intramurals Volleyball Team 2025',
+      mediaType: 'image',
+      mediaUrl: '/vball1.jpg',
+    },
+    {
+      description: 'UBC Intramurals Volleyball Team 2025',
+      mediaType: 'image',
+      mediaUrl: '/vball2.jpg',
+    },{
+      description: 'LSCA Volleyball Team 2011',
+      mediaType: 'image',
+      mediaUrl: '/vball3.jpg',
+    },{
+      description: 'LSCA Volleyball Team 2011',
+      mediaType: 'image',
+      mediaUrl: '/vball4.jpg',
+    },
+  ];
+
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % musicProjects.length);
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + musicProjects.length) % musicProjects.length);
+  };
+
+  const nextVolleyballSlide = () => {
+    setCurrentVolleyballSlide((prev) => (prev + 1) % volleyballPics.length);
+  };
+
+  const prevVolleyballSlide = () => {
+    setCurrentVolleyballSlide((prev) => (prev - 1 + volleyballPics.length) % volleyballPics.length);
   };
 
   return (
@@ -67,10 +98,59 @@ export default function About() {
         </h1>
         
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg space-y-6">
+          {/* Profile Image with Peony Flower */}
+          <div className="relative flex justify-center mb-5 py-1">
+            {/* Peony flower shape background */}
+            <div className="absolute inset-0 flex justify-center items-center">
+              <div className="relative w-[500px] h-[500px]">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  
+                  {/* Outer layer petals - using ellipses for more realistic petal shapes */}
+                  <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-44 h-56 bg-[#89CFF0]/70 rounded-[50%] rotate-0 animate-pulse" style={{animationDuration: '3s'}}></div>
+                  <div className="absolute -top-32 -right-32 w-44 h-56 bg-[#60A5FA]/70 rounded-[50%] rotate-45 animate-pulse" style={{animationDuration: '3s', animationDelay: '0.375s'}}></div>
+                  <div className="absolute top-1/2 -translate-y-1/2 -right-40 w-44 h-56 bg-[#89CFF0]/70 rounded-[50%] rotate-90 animate-pulse" style={{animationDuration: '3s', animationDelay: '0.75s'}}></div>
+                  <div className="absolute -bottom-32 -right-32 w-44 h-56 bg-[#60A5FA]/70 rounded-[50%] rotate-[135deg] animate-pulse" style={{animationDuration: '3s', animationDelay: '1.125s'}}></div>
+                  <div className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-44 h-56 bg-[#89CFF0]/70 rounded-[50%] rotate-180 animate-pulse" style={{animationDuration: '3s', animationDelay: '1.5s'}}></div>
+                  <div className="absolute -bottom-32 -left-32 w-44 h-56 bg-[#60A5FA]/70 rounded-[50%] rotate-[225deg] animate-pulse" style={{animationDuration: '3s', animationDelay: '1.875s'}}></div>
+                  <div className="absolute top-1/2 -translate-y-1/2 -left-40 w-44 h-56 bg-[#89CFF0]/70 rounded-[50%] rotate-[270deg] animate-pulse" style={{animationDuration: '3s', animationDelay: '2.25s'}}></div>
+                  <div className="absolute -top-32 -left-32 w-44 h-56 bg-[#60A5FA]/70 rounded-[50%] rotate-[315deg] animate-pulse" style={{animationDuration: '3s', animationDelay: '2.625s'}}></div>
+                  
+                  {/* Middle layer petals - slightly smaller and rotated */}
+                  <div className="absolute -top-28 left-1/3 w-36 h-44 bg-[#60A5FA]/85 rounded-[50%] rotate-[22deg] animate-pulse" style={{animationDuration: '3.2s', animationDelay: '0.2s'}}></div>
+                  <div className="absolute -top-20 -right-20 w-36 h-44 bg-[#89CFF0]/85 rounded-[50%] rotate-[67deg] animate-pulse" style={{animationDuration: '3.2s', animationDelay: '0.6s'}}></div>
+                  <div className="absolute top-1/3 -right-28 w-36 h-44 bg-[#60A5FA]/85 rounded-[50%] rotate-[112deg] animate-pulse" style={{animationDuration: '3.2s', animationDelay: '1s'}}></div>
+                  <div className="absolute bottom-1/3 -right-20 w-36 h-44 bg-[#89CFF0]/85 rounded-[50%] rotate-[157deg] animate-pulse" style={{animationDuration: '3.2s', animationDelay: '1.4s'}}></div>
+                  <div className="absolute -bottom-28 left-1/3 w-36 h-44 bg-[#60A5FA]/85 rounded-[50%] rotate-[202deg] animate-pulse" style={{animationDuration: '3.2s', animationDelay: '1.8s'}}></div>
+                  <div className="absolute -bottom-20 -left-20 w-36 h-44 bg-[#89CFF0]/85 rounded-[50%] rotate-[247deg] animate-pulse" style={{animationDuration: '3.2s', animationDelay: '2.2s'}}></div>
+                  <div className="absolute top-1/3 -left-28 w-36 h-44 bg-[#60A5FA]/85 rounded-[50%] rotate-[292deg] animate-pulse" style={{animationDuration: '3.2s', animationDelay: '2.6s'}}></div>
+                  <div className="absolute bottom-1/3 -left-20 w-36 h-44 bg-[#89CFF0]/85 rounded-[50%] rotate-[337deg] animate-pulse" style={{animationDuration: '3.2s', animationDelay: '3s'}}></div>
+                  
+                  {/* Center petals - small ruffled look */}
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-32 bg-[#89CFF0] rounded-[50%] rotate-0 animate-pulse" style={{animationDuration: '3.5s'}}></div>
+                  <div className="absolute top-1/2 -translate-y-1/2 -right-12 w-24 h-32 bg-[#60A5FA] rounded-[50%] rotate-90 animate-pulse" style={{animationDuration: '3.5s', animationDelay: '0.875s'}}></div>
+                  <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-24 h-32 bg-[#89CFF0] rounded-[50%] rotate-180 animate-pulse" style={{animationDuration: '3.5s', animationDelay: '1.75s'}}></div>
+                  <div className="absolute top-1/2 -translate-y-1/2 -left-12 w-24 h-32 bg-[#60A5FA] rounded-[50%] rotate-270 animate-pulse" style={{animationDuration: '3.5s', animationDelay: '2.625s'}}></div>
+                  
+                  {/* Core center */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 bg-[#2B6CB0] rounded-full animate-pulse" style={{animationDuration: '4s'}}></div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Profile Image */}
+            <div className="relative z-10">
+              <img 
+                src="/transparentme.png" 
+                alt="Dana"
+                className="w-48 h-auto"
+              />
+            </div>
+          </div>
+
           <p className="text-lg text-[#1E293B] leading-relaxed">
             Hi! I’m Dana, I’m a University of British Columbia student majoring in Cognitive Systems and minoring in Applied Music Technology. 
-            I enjoy combining technology, music, and gaming! I create interactive sound experiences through coding and design, and I’m currently expanding my skills toward game development. 
-            I aim to bring creative systems to life in immersive, playable worlds.</p>
+            I love coding, music, and gaming! Throughout my degree, I have created interactive sound experiences through coding and design, and I’m currently expanding my skills toward game development. 
+            Eventually, I want to bring creative systems to life in immersive, playable worlds! In my spare time nowadays, I like to read books and play PC games.</p>
         
           <h2 className="text-2xl font-semibold text-[#2B6CB0] mt-8 mb-4">Skills & Technologies</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -152,6 +232,54 @@ export default function About() {
               
               <button
                 onClick={nextSlide}
+                className="bg-[#2B6CB0] text-white p-2 rounded-full hover:bg-[#1E5A8E] transition-colors"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+            <h2 className="text-2xl font-semibold text-[#2B6CB0] mt-8 mb-4">Volleyball</h2>
+            <p className="text-[#1E293B] mb-6 opacity-90">
+              I played a lot of volleyball as a child and participated in various tournaments up until middle school. This sport taught me the importance of teamwork and dedication.
+              In university, I started playing recreationally with friends. In my fourth year, I started my own team and joined the UBC intramurals league!
+              While I don't play often anymore, volleyball has been a great way for me to stay active and spend time with friends.
+            </p>
+
+            {/* Slideshow */}
+          <div className="relative bg-gradient-to-br from-white to-[#F8FAFC] rounded-xl p-4 shadow-sm">
+            <img 
+              src={volleyballPics[currentVolleyballSlide].mediaUrl} 
+              alt={`Volleyball memory ${currentVolleyballSlide + 1}`}
+              className="w-full rounded-lg shadow-sm mb-3"
+            />
+            <p className="text-[#1E293B] text-sm italic opacity-75 mb-4">{volleyballPics[currentVolleyballSlide].description}</p>
+            
+            {/* Navigation Buttons */}
+            <div className="flex items-center justify-between">
+              <button
+                onClick={prevVolleyballSlide}
+                className="bg-[#2B6CB0] text-white p-2 rounded-full hover:bg-[#1E5A8E] transition-colors"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              
+              <div className="flex gap-2">
+                {volleyballPics.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentVolleyballSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentVolleyballSlide ? 'bg-[#2B6CB0] w-6' : 'bg-[#2B6CB0]/30'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+              
+              <button
+                onClick={nextVolleyballSlide}
                 className="bg-[#2B6CB0] text-white p-2 rounded-full hover:bg-[#1E5A8E] transition-colors"
                 aria-label="Next slide"
               >
