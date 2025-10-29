@@ -25,28 +25,40 @@ export default function Projects() {
         title: "DAhandler",
         description: "Legal workflow automation tool that syncs with Outlook calendars to streamline trial event management. Saves 10+ hours weekly for a team of 20+ legal professionals.",
         tech: ["Vue.js", "JavaScript", "Python", "HTML/CSS", "Outlook API"],
-        color: "from-orange-500 to-amber-400" 
+        color: "from-orange-500 to-amber-400",
+        image: "/dahandler.png"
       },
       {
         title: "Litigation Checklist Calculator",
         description: "Dates and deadlines calculator for legal teams that reduces scheduling conflicts during high-volume case periods. Built in 3 days with a responsive, user-friendly interface for 20+ legal professionals.",
         tech: ["React", "Vite", "HTML", "CSS"],
         color: "from-orange-600 to-orange-400",
-        image: "/litchecklist.png"
+        image: "/litchecklist.png",
+        links: [
+          { label: "Website", url: "https://deynuh.github.io/Litigation-Checklist-Calculator/", icon: true},
+          { label: "GitHub Repo", url: "https://github.com/Deynuh/Litigation-Checklist-Calculator", iconImage: "/github.png"}
+        ]
       },
       {
         title: "AMT Portfolio",
         description: "Portfolio showcasing my works in Applied Music Technology. My first attempt at creating a responsive website portfolio.",
         tech: ["React", "Vite", "HTML", "CSS"],
         color: "from-amber-500 to-yellow-400",
-        image: "/amtportfolio.png"
+        image: "/amtportfolio.png",
+        links: [
+          { label: "Website", url: "https://deynuh.github.io/amt-portfolio/", icon: true},
+          { label: "GitHub Repo", url: "https://github.com/Deynuh/amt-portfolio", iconImage: "/github.png"}
+        ]
       },
       {
         title: "What's Cookin'?",
         description: "A recipe and restaurant manager that decides a user’s meal based on stored recipes and restaurants.",
         tech: ["Java", "JUnit", "Swing GUI"],
         color: "from-amber-500 to-yellow-400",
-        image: "/whatscookin.png"
+        image: "/whatscookin.png",
+        links: [
+          { label: "GitHub Repo", url: "https://github.com/Deynuh/WhatsCookin", iconImage: "/github.png"}
+        ]
       },
     ],
     musicTech: [
@@ -55,42 +67,60 @@ export default function Projects() {
         description: "Live performance audio looper with real-time effects processing. Features 15 simultaneous loops, modular patch system with count-in and metronome.",
         tech: ["Max", "Jitter", "Audio Processing"],
         color: "from-purple-500 to-pink-500",
-        image: "/loopmax.jpg" 
+        image: "/loopmax.jpg", //maybe add performance video if can still find
+        links: [
+          { label: "Project Website", url: "https://dneria1.wixsite.com/loopmax", icon: true}
+        ]
       },
       {
         title: "Shrinking Islands",
         description: "Interactive musical performance piece using Xbox Kinect to track dancer movements in Max. Premiered to 80+ attendees at University of the Philippines Diliman after a 2-week creative residency.",
         tech: ["Max", "Unity", "C#"],
         color: "from-pink-500 to-purple-400",
-        image: "/island.jpg" //ADD CREDITS TO THE IMAGE
+        image: "/island.jpg", //ADD CREDITS TO THE IMAGE, also add more photos and explanation that it was streamed live but not recorded
+        links: [
+          { label: "Creative Residency Video", url: "https://www.youtube.com/watch?v=2uWa_zclqPQ", iconImage: "/youtube.png"}
+        ]
       },
       {
         title: "The Pianist",
         description: "Interactive audio-visual performance piece using Xbox Kinect to track dancer movements in real-time. Transforms a Unity piano into an audio-reactive instrument with particle systems and adaptive lighting responding to musical intensity.",
         tech: ["Max", "Unity", "C#"],
         color: "from-purple-500 to-pink-500",
-        image: "/piano.jpg" //ADD CREDITS TO THE IMAGE
+        image: "/piano.jpg", //ADD CREDITS TO THE IMAGE
+        links: [
+          { label: "Performance Video", url: "https://www.youtube.com/watch?v=RNM0_BtZe2Y", iconImage: "/youtube.png"}
+        ]
       },
       {
         title: "Bells",
         description: "Motion-tracked performance piece with custom granular synthesis. Dancer movements control a Gen-based synthesizer programmed in CodeBox.",
         tech: ["Max", "Gen"],
         color: "from-purple-600 to-purple-400",
-        image: "/bells.png"
+        image: "/bells.png",
+        links: [
+          { label: "Performance Video", url: "https://www.youtube.com/watch?v=ug2vfM7eUQk", iconImage: "/youtube.png"}
+        ]
       },
       {
         title: "CosmicEchoes",
         description: "5-minute interactive musical performance using Xbox Kinect to track dancer movements. Created dancer-controlled video elements in Jitter that respond to real-time motion data.",
         tech: ["Max", "Jitter"],
         color: "from-pink-600 to-purple-500",
-        image: "/cosmicechoes.png"
+        image: "/cosmicechoes.png",
+        links: [
+          { label: "Performance Video", url: "https://www.youtube.com/watch?v=w0Dtyzz1HA8", iconImage: "/youtube.png"}
+        ]
       },
       {
         title: "Dissociation",
         description: "Live contemporary music piece featuring precisely timed vocal sample processing and manipulation. Performed and controlled voice line edits throughout the performance.",
         tech: ["Max/MSP", "Live Audio Processing"],
         color: "from-purple-600 to-purple-400",
-        image: "/dissociation.png"
+        image: "/dissociation.png", 
+        links: [
+          { label: "Performance Video", url: "https://www.youtube.com/watch?v=eNm__0OqPkI", iconImage: "/youtube.png"}
+        ]
       }
     ],
     games: [
@@ -102,7 +132,8 @@ export default function Projects() {
         image: "/deathkitchen.jpg",
         inDevelopment: true,
         links: [
-          { label: "Steam Page", url: "https://store.steampowered.com/app/3603380/Death_Kitchen/", iconImage: "/steam.png" }
+          { label: "Steam Page", url: "https://store.steampowered.com/app/3603380/Death_Kitchen/", iconImage: "/steam.png" }, 
+          { label: "Studio Page", url: "https://www.gamedevelopment.ca/studio", icon: true}
         ]
       }
     ]
