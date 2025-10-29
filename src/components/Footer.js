@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="py-16 px-6 bg-gradient-to-br from-[#2B6CB0] to-[#89CFF0] text-white">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Let's Connect
         </h2>

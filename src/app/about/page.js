@@ -1,12 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function About() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentVolleyballSlide, setCurrentVolleyballSlide] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+  const videoRef = useRef(null);
 
   const certifications = [
     { 
@@ -83,9 +86,23 @@ export default function About() {
     setCurrentVolleyballSlide((prev) => (prev - 1 + volleyballPics.length) % volleyballPics.length);
   };
 
+  const openModal = (content) => {
+    // Pause the video in the slideshow before opening modal
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+    setModalContent(content);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalContent(null);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#E3F2FD] via-[#F8FAFC] to-[#DBEAFE] py-16 px-6 pt-24">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <Link 
           href="/" 
           className="inline-block mb-8 text-[#2B6CB0] hover:text-[#89CFF0] transition-colors font-semibold"
@@ -183,27 +200,40 @@ export default function About() {
             I also joined the UBC Music Initiative Club, where I met fellow music enthusiasts and had the chance to make music together!
           </p>
           
-          {/* Slideshow */}
+          {/* Music Slideshow */}
           <div className="relative bg-gradient-to-br from-white to-[#F8FAFC] rounded-xl p-4 shadow-sm">
             {musicProjects[currentSlide].mediaType === 'video' ? (
-              <div className="aspect-video w-full mb-3">
+              <div className="h-[550px] w-full mb-3 flex items-center justify-center bg-black rounded-lg relative group">
                 <video
+                  ref={videoRef}
                   key={currentSlide}
-                  width="100%"
-                  height="100%"
+                  className="h-full w-full object-contain rounded-lg"
                   controls
-                  className="rounded-lg"
                 >
                   <source src={musicProjects[currentSlide].mediaUrl} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                <button
+                  onClick={() => openModal(musicProjects[currentSlide])}
+                  className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1.5 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+                >
+                  Fullscreen
+                </button>
               </div>
             ) : (
-              <img 
-                src={musicProjects[currentSlide].mediaUrl} 
-                alt={`Music memory ${currentSlide + 1}`}
-                className="w-full rounded-lg shadow-sm mb-3"
-              />
+              <div 
+                className="h-[550px] w-full mb-3 flex items-center justify-center bg-gray-100 rounded-lg cursor-pointer group relative overflow-hidden"
+                onClick={() => openModal(musicProjects[currentSlide])}
+              >
+                <img 
+                  src={musicProjects[currentSlide].mediaUrl} 
+                  alt={`Music memory ${currentSlide + 1}`}
+                  className="h-full w-full object-contain rounded-lg"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="text-white text-lg font-semibold">Click to enlarge</span>
+                </div>
+              </div>
             )}
             <p className="text-[#1E293B] text-sm italic opacity-75 mb-4">{musicProjects[currentSlide].description}</p>
             
@@ -246,13 +276,21 @@ export default function About() {
               While I don't play often anymore, volleyball has been a great way for me to stay active and spend time with friends.
             </p>
 
-            {/* Slideshow */}
+            {/* Volleyball Slideshow */}
           <div className="relative bg-gradient-to-br from-white to-[#F8FAFC] rounded-xl p-4 shadow-sm">
-            <img 
-              src={volleyballPics[currentVolleyballSlide].mediaUrl} 
-              alt={`Volleyball memory ${currentVolleyballSlide + 1}`}
-              className="w-full rounded-lg shadow-sm mb-3"
-            />
+            <div 
+              className="h-[550px] w-full mb-3 flex items-center justify-center bg-gray-100 rounded-lg cursor-pointer group relative overflow-hidden"
+              onClick={() => openModal(volleyballPics[currentVolleyballSlide])}
+            >
+              <img 
+                src={volleyballPics[currentVolleyballSlide].mediaUrl} 
+                alt={`Volleyball memory ${currentVolleyballSlide + 1}`}
+                className="h-full w-full object-contain rounded-lg"
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="text-white text-lg font-semibold">Click to enlarge</span>
+              </div>
+            </div>
             <p className="text-[#1E293B] text-sm italic opacity-75 mb-4">{volleyballPics[currentVolleyballSlide].description}</p>
             
             {/* Navigation Buttons */}
@@ -288,6 +326,40 @@ export default function About() {
             </div>
           </div>
         </div>
+
+        {/* Modal for fullscreen view */}
+        {isModalOpen && modalContent && (
+          <div 
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            onClick={closeModal}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition-colors z-10"
+              aria-label="Close"
+            >
+              ×
+            </button>
+            {modalContent.mediaType === 'video' ? (
+              <video
+                className="max-h-[90vh] max-w-[90vw] rounded-lg"
+                controls
+                autoPlay
+                onClick={(e) => e.stopPropagation()}
+              >
+                <source src={modalContent.mediaUrl} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <img 
+                src={modalContent.mediaUrl} 
+                alt="Fullscreen view"
+                className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg"
+                onClick={(e) => e.stopPropagation()}
+              />
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
