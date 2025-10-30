@@ -20,6 +20,21 @@ export default function Projects() {
   };
 
   const projectCategories = {
+    games: [
+      {
+        title: "Death Kitchen",
+        description: "Fast-paced co-op cooking horror game where players serve dangerous alien customers.",
+        tech: ["Unity", "C#", "Multiplayer"],
+        color: "from-emerald-500 to-teal-500",
+        image: "/deathkitchen.jpg",
+        inDevelopment: true,
+        furtherInfo: "Recently joined and started collaborating with a small indie team to enhance character control systems and implement robust multiplayer functionality using Unity's Netcode for GameObjects. Focused on creating smooth, responsive gameplay mechanics that enhance the cooperative experience.",
+        links: [
+          { label: "Steam Page", url: "https://store.steampowered.com/app/3603380/Death_Kitchen/", iconImage: "/steam.png" }, 
+          { label: "Studio Page", url: "https://www.gamedevelopment.ca/studio", icon: true}
+        ]
+      }
+    ],
     webApps: [
       {
         title: "DAhandler",
@@ -132,21 +147,6 @@ export default function Projects() {
           { label: "Performance Video", url: "https://www.youtube.com/watch?v=eNm__0OqPkI", iconImage: "/youtube.png"}
         ]
       }
-    ],
-    games: [
-      {
-        title: "Death Kitchen",
-        description: "Fast-paced co-op cooking horror game where players serve dangerous alien customers.",
-        tech: ["Unity", "C#", "Multiplayer"],
-        color: "from-emerald-500 to-teal-500",
-        image: "/deathkitchen.jpg",
-        inDevelopment: true,
-        furtherInfo: "Recently joined and started collaborating with a small indie team to enhance character control systems and implement robust multiplayer functionality using Unity's Netcode for GameObjects. Focused on creating smooth, responsive gameplay mechanics that enhance the cooperative experience.",
-        links: [
-          { label: "Steam Page", url: "https://store.steampowered.com/app/3603380/Death_Kitchen/", iconImage: "/steam.png" }, 
-          { label: "Studio Page", url: "https://www.gamedevelopment.ca/studio", icon: true}
-        ]
-      }
     ]
   };
 
@@ -196,14 +196,14 @@ export default function Projects() {
 
   const categories = [
     { id: 'all', label: 'All Projects' },
+    { id: 'games', label: 'Games' },
     { id: 'webApps', label: 'Web & Apps' },
-    { id: 'musicTech', label: 'Music Tech' },
-    { id: 'games', label: 'Games' }
+    { id: 'musicTech', label: 'Music Tech' }
   ];
 
   const getProjectsToDisplay = () => {
     if (activeCategory === 'all') {
-      return [...projectCategories.webApps, ...projectCategories.musicTech, ...projectCategories.games];
+      return [...projectCategories.games, ...projectCategories.webApps, ...projectCategories.musicTech];
     }
     return projectCategories[activeCategory];
   };
