@@ -97,22 +97,24 @@ export default function Projects() {
         description: "Interactive musical performance piece featuring a visual representation of a sinking island controlled by dancer movements.",
         tech: ["Max", "Unity", "C#"],
         color: "from-pink-500 to-purple-400",
-        image: "/island.jpg", //ADD CREDITS TO THE IMAGE, also add more photos and explanation that it was streamed live but not recorded
-        furtherInfo: "Created an interactive performance piece where dancer movements control audio-visual elements (such as lightning and rain speed) in real-time using Xbox Kinect and Max/MSP. Gained valuable knowledge on Cinemachine and Unity assets. Developed during a 2-week creative residency at the University of Philippines Diliman culminating in a live performance for 80+ attendees.",
+        image: "/island.jpg", //add more photos and explanation that it was streamed live but not recorded
+        furtherInfo: "Created an interactive performance piece where dancer movements control audio-visual elements (such as lightning and rain speed) in real-time using Xbox Kinect and Max/MSP. Gained valuable knowledge on Cinemachine and Unity assets. Developed during a 2-week creative residency at the University of Philippines Diliman culminating in a live performance for 80+ attendees. The performance was streamed but not recorded.",
         links: [
           { label: "Creative Residency Video", url: "https://www.youtube.com/watch?v=2uWa_zclqPQ", iconImage: "/youtube.png"}
-        ]
+        ],
+        photoCredits: { label: "Photo: Unity Asset Store - Free Island Collection", url: "https://assetstore.unity.com/packages/3d/environments/landscapes/free-island-collection-104753" }
       },
       {
         title: "The Pianist",
         description: "Interactive audio-visual performance piece featuring a virtual piano controlled by a live pianist as well as a particle system manipulated by tracked dancer movements.",
         tech: ["Max", "Unity", "C#"],
         color: "from-purple-500 to-pink-500",
-        image: "/piano.jpg", //ADD CREDITS TO THE IMAGE
+        image: "/piano.jpg", 
         furtherInfo: "Transforms a Unity piano into an audio-reactive instrument that roughly follows what the live pianist plays. The secondary interactive element includes particle systems that respond to dancer movements.",
         links: [
           { label: "Performance Video", url: "https://www.youtube.com/watch?v=RNM0_BtZe2Y", iconImage: "/youtube.png"}
-        ]
+        ],
+        photoCredits: { label: "Photo: Unity Asset Store - 15 Low Poly Models", url: "https://assetstore.unity.com/packages/3d/props/15-low-poly-models-202061" }
       },
       {
         title: "Bells",
@@ -152,7 +154,7 @@ export default function Projects() {
 
   const ProjectCard = ({ project }) => (
     <div 
-      className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
+      className="bg-white/80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
       onClick={() => openModal(project)}
     >
       {/* Project Image/Banner */}
@@ -161,6 +163,8 @@ export default function Projects() {
           <img 
             src={project.image} 
             alt={project.title}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         </div>
@@ -257,6 +261,7 @@ export default function Projects() {
           >
             <div 
               className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl scroll-smooth"
+              style={{ willChange: 'transform' }}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
@@ -291,8 +296,22 @@ export default function Projects() {
                     <img 
                       src={selectedProject.image} 
                       alt={selectedProject.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-64 object-cover"
                     />
+                    {selectedProject.photoCredits && (
+                      <div className="mt-2 px-8 text-sm text-[#64748B]">
+                        <a
+                          href={typeof selectedProject.photoCredits === 'string' ? selectedProject.photoCredits : selectedProject.photoCredits.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline hover:text-[#2B6CB0]"
+                        >
+                          {typeof selectedProject.photoCredits === 'string' ? selectedProject.photoCredits : selectedProject.photoCredits.label}
+                        </a>
+                      </div>
+                    )}
                   </div>
                 )}
 
