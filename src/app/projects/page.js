@@ -1,13 +1,30 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { ExternalLink } from 'lucide-react';
 
 export default function Projects() {
+  const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const category = searchParams.get('category');
+    if (category) {
+      const categoryMap = {
+        'Game': 'games',
+        'Web': 'webApps',
+        'Music': 'musicTech'
+      };
+      const mappedCategory = categoryMap[category];
+      if (mappedCategory) {
+        setActiveCategory(mappedCategory);
+      }
+    }
+  }, [searchParams]);
 
   const openModal = (project) => {
     setSelectedProject(project);

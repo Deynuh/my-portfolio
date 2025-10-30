@@ -22,8 +22,12 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-[#2B6CB0]">
-            Dana Neria
+          <Link href="/" className="flex items-center">
+            <img 
+              src="/logoTransparent.png" 
+              alt="Logo" 
+              className="w-12 h-12"
+            />
           </Link>
 
           <button
