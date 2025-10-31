@@ -117,7 +117,7 @@ function ProjectsContent() {
         image: "/island.jpg", //add more photos and explanation that it was streamed live but not recorded
         furtherInfo: "Created an interactive performance piece where dancer movements control audio-visual elements (such as lightning and rain speed) in real-time using Xbox Kinect and Max/MSP. Gained valuable knowledge on Cinemachine and Unity assets. Developed during a 2-week creative residency at the University of Philippines Diliman culminating in a live performance for 80+ attendees. The performance was streamed but not recorded.",
         links: [
-          { label: "Creative Residency Video", url: "https://www.youtube.com/watch?v=2uWa_zclqPQ", iconImage: "/youtube.png"}
+          { label: "Creative Residency Video", url: "https://www.youtube.com/watch?v=PDOKUq_GEVA", iconImage: "/youtube.png"}
         ],
         photoCredits: { label: "Photo: Unity Asset Store - Free Island Collection", url: "https://assetstore.unity.com/packages/3d/environments/landscapes/free-island-collection-104753" }
       },
