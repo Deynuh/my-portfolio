@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="py-16 px-6 bg-gradient-to-br from-[#2B6CB0] to-[#89CFF0] text-white">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Let's Connect
+          Let&apos;s Connect
         </h2>
         <p className="text-lg mb-8 opacity-90">
           Interested in collaborating or just want to chat? Reach out!

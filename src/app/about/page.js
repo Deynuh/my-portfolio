@@ -167,8 +167,8 @@ export default function About() {
           </div>
 
           <p className="text-lg text-[#1E293B] leading-relaxed">
-            Hi! I'm Dana, I'm a University of British Columbia student majoring in Cognitive Systems and minoring in Applied Music Technology. 
-            I love coding, music, and gaming! Throughout my degree, I have created interactive sound experiences through coding and design, and I'm currently expanding my skills toward game development. 
+            Hi! I&apos;m Dana, I&apos;m a University of British Columbia student majoring in Cognitive Systems and minoring in Applied Music Technology. 
+            I love coding, music, and gaming! Throughout my degree, I have created interactive sound experiences through coding and design, and I&apos;m currently expanding my skills toward game development. 
             Eventually, I want to bring creative systems to life in immersive, playable worlds! In my spare time nowadays, I like to read books and play PC games.</p>
         
           {/* Download Resume Button */}
@@ -212,7 +212,7 @@ export default function About() {
 
           <h2 className="text-2xl font-semibold text-[#2B6CB0] mt-8 mb-4">Music</h2>
           <p className="text-[#1E293B] mb-6 opacity-90">
-            Music is a big part of my life as I've been singing since I was little and playing guitar since I was 14.
+            Music is a big part of my life as I&apos;ve been singing since I was little and playing guitar since I was 14.
             Throughout high school, I performed in events like busking and concerts.
             I wanted to make sure I continued to nurture this passion alongside my tech interests, so I pursued a minor in Applied Music Technology at UBC.
             I also joined the UBC Music Initiative Club, where I met fellow music enthusiasts and had the chance to make music together!
@@ -291,7 +291,7 @@ export default function About() {
             <p className="text-[#1E293B] mb-6 opacity-90">
               I played a lot of volleyball as a child and participated in various tournaments up until middle school. This sport taught me the importance of teamwork and dedication.
               In university, I started playing recreationally with friends. In my fourth year, I started my own team and joined the UBC intramurals league!
-              While I don't play often anymore, volleyball has been a great way for me to stay active and spend time with friends.
+              While I don&apos;t play often anymore, volleyball has been a great way for me to stay active and spend time with friends.
             </p>
 
             {/* Volleyball Slideshow */}
