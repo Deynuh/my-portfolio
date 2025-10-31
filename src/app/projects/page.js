@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ExternalLink } from 'lucide-react';
 
-export default function Projects() {
+function ProjectsContent() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
@@ -408,5 +408,17 @@ export default function Projects() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function Projects() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-[#E3F2FD] via-[#F8FAFC] to-[#DBEAFE] py-16 px-6 pt-24 flex items-center justify-center">
+        <div className="text-[#2B6CB0] text-xl">Loading...</div>
+      </div>
+    }>
+      <ProjectsContent />
+    </Suspense>
   );
 }
