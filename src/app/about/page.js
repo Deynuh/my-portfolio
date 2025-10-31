@@ -120,7 +120,7 @@ export default function About() {
           <div className="relative flex justify-center mb-5 py-1">
             {/* Peony flower shape background */}
             <div className={`absolute inset-0 flex justify-center items-center transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
-              <div className="relative w-[500px] h-[500px] scale-75 sm:scale-90 md:scale-100">
+              <div className="relative w-[200px] h-[200px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px]">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   
                   {/* Outer layer petals - using ellipses for more realistic petal shapes */}
