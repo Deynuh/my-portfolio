@@ -8,7 +8,7 @@ export default function Footer() {
           Let&apos;s Connect
         </h2>
         <p className="text-lg mb-8 opacity-90">
-          Don&apos;t hesitate to reach out, I&apos;m always open to new connections!
+          Thanks for visiting! Always happy to connect with fellow creators. Reach out anytime!
         </p>
         <div className="flex justify-center gap-6 mb-8">
           <a
