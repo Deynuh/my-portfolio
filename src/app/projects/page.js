@@ -58,7 +58,7 @@ function ProjectsContent() {
         description: "Legal workflow automation tool that syncs with Outlook calendars to streamline trial event management.",
         tech: ["Vue.js", "JavaScript", "Python", "HTML/CSS", "Outlook API"],
         color: "from-orange-500 to-amber-400",
-        image: "/dahandler.png",
+  image: "/DAhandler.png",
         furtherInfo: "Developed the front-end component and a bit of the back-end component to ensure a pleasant user experience and seamless calendar integration for legal teams. Saves 10+ hours weekly for a team of 20+ legal professionals. For company privacy reasons, I am unable to provide links to the repository and app.",
       },
       {
