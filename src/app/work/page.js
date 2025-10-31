@@ -3,36 +3,33 @@ import Link from 'next/link';
 export default function Work() {
   const workExperience = [
     {
-      title: "Game Developer",
-      company: "Company Name",
-      period: "2023 - Present",
-      description: "Developing immersive game experiences with focus on audio integration and player engagement.",
+      title: "Unity Developer",
+      company: "Eternal Blaze Studios",
+      period: "Oct 2025 - Present",
+      description: "Developing game experience with focus on multiplayer aspects and player engagement.",
       achievements: [
-        "Built interactive game mechanics using Unity and C#",
-        "Implemented dynamic audio systems with FMOD",
-        "Collaborated with designers to create compelling gameplay"
+        "Recently joined the team to work on an exciting horror co-op game",
+        "Collaborated with art team to brainstorm character designs"
       ]
     },
     {
-      title: "Creative Technologist",
-      company: "Previous Company",
-      period: "2021 - 2023",
-      description: "Created interactive web experiences and music technology projects.",
+      title: "Sound Team Executive",
+      company: "UBC Music Initiative",
+      period: "Jan 2023 - Oct 2025",
+      description: "Managed audio systems and organized music events for the university community.",
       achievements: [
-        "Developed web applications using React and Next.js",
-        "Built audio visualization tools with Web Audio API",
-        "Led cross-functional teams on creative projects"
+        "Set up and managed audio equipment for live performances",
+        "Organized bi-weekly to monthly music events and jam sessions",
       ]
     },
     {
-      title: "Junior Developer",
-      company: "Earlier Company",
-      period: "2019 - 2021",
-      description: "Started career building web applications and learning game development.",
+      title: "Java and Web Development Tutor",
+      company: "The C.O.D.E. Initiative Foundation",
+      period: "Jan 2023 - Mar 2023",
+      description: "Taught Java programming and web development to beginners through structured lessons and hands-on projects.",
       achievements: [
-        "Contributed to front-end development projects",
-        "Learned Unity and game design fundamentals",
-        "Participated in game jams and creative coding challenges"
+        "Empowered students to build their own web applications",
+        "Encouraged problem-solving and coding best practices",
       ]
     }
   ];
