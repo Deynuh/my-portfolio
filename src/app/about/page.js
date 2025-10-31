@@ -119,7 +119,7 @@ export default function About() {
           {/* Profile Image with Peony Flower */}
           <div className="relative flex justify-center mb-5 py-1">
             {/* Peony flower shape background */}
-            <div className={`absolute inset-0 flex justify-center items-center transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'} overflow-hidden pointer-events-none`}>
+            <div className={`absolute inset-0 flex justify-center items-center transition-opacity duration-300 overflow-hidden pointer-events-none ${imageLoaded ? 'opacity-100' : 'opacity-0'} sm:opacity-100`}>
               <div className="relative w-[200px] h-[200px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px]">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   
