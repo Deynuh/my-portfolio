@@ -74,6 +74,19 @@ function ProjectsContent() {
         ]
       },
       {
+        title: "Mannequin Masquerade",
+        description: "A top-down 3D game where you play as a mask.",
+        tech: ["Unity", "C#", "Windows", "3D"],
+        color: "from-emerald-500 to-teal-500",
+        image: "/MMLogo.png",
+        additionalImages: ["/MMScreenshot1.png", "/MMScreenshot2.png", "/MMScreenshot3.png", "/MMScreenshot4.png"],
+        inDevelopment: false,
+        furtherInfo: "A game where you are the mask! Within a time limit, you can hop onto the face of one dancer to another dancer, all while trying not to be detected by the detectors. When you are on a dancer, you can rotate the dancing angle of the dancer using A and D, or left arrow and right arrow. Try to survive without being detected for as long as possible, on different dancers.",
+        links: [
+          { label: "Game Jam Page", url: "https://globalgamejam.org/games/2026/mannequin-masquerade-0", icon: true}
+        ],
+      },
+      {
         title: "Shoot Paralysis",
         description: "A fast-paced 3D shooter mixing creepy and cute as you zap sleep paralysis ghosts from bed.",
         tech: ["Unity", "C#", "Web", "Windows", "3D Shooter"],
