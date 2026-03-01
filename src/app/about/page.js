@@ -15,11 +15,15 @@ export default function About() {
   const certifications = [
     { 
       name: 'Unity Essentials Pathway', 
-      url: 'https://www.credly.com/badges/8523f1b3-ae8c-43bb-95fd-8c57be0ca8b2/linked_in_profile' // Replace with your actual URL
+      url: 'https://www.credly.com/badges/8523f1b3-ae8c-43bb-95fd-8c57be0ca8b2/linked_in_profile'
     },
     { 
       name: 'Unity Junior Programmer', 
-      url: 'https://www.credly.com/badges/e8071fb9-38a8-46a8-9116-556aa28f8263/linked_in_profile' // Replace with your actual URL
+      url: 'https://www.credly.com/badges/e8071fb9-38a8-46a8-9116-556aa28f8263/linked_in_profile' 
+    },
+    { 
+      name: 'Unity Creative Core', 
+      url: 'https://www.credly.com/badges/c65f1ad2-a755-421d-a4a9-9daab7326e23/linked_in_profile' 
     }
   ];
 
@@ -189,7 +193,7 @@ export default function About() {
 
           <h2 className="text-2xl font-semibold text-[#2B6CB0] mt-8 mb-4">Skills & Technologies</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {['Unity', 'C#', 'Java', 'JavaScript', 'React', 'Game Design', 'Sound Design', 'UI/UX', 'Max'].map((skill) => (
+            {['Unity', 'C#', 'Unreal Engine 5', 'C++', 'Java', 'JavaScript', 'UI/UX','Game Design', 'Sound Design', ].map((skill) => (
               <div key={skill} className="bg-[#E3F2FD] px-4 py-2 rounded-lg text-center text-[#2B6CB0] font-medium">
                 {skill}
               </div>
