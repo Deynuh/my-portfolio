@@ -3,20 +3,23 @@ import Link from 'next/link';
 export default function Work() {
   const workExperience = [
     {
-      title: "Software Developer",
+      title: "Software Developer, Project Lead",
       company: "UBC Emerging Media Lab",
       period: "Feb 2026 - Present",
-      description: "Working on the Procedural Poetry Funhouse Project, an Unreal Engine 5 experience that uses AI and VR to reimagine poetry as a physical space.",
+      description: "Develop interactive educational tools leveraging emerging technologies including VR and AI to enhance learning experiences.",
       tech: ["Unreal Engine 5", "C++", "Blueprints"],
       achievements: [
-        // UPDATE ONCE I HAVE MORE TO ADD
+        "Lead project planning and development efforts for a multidisciplinary team, managing priorities, milestones, and stakeholder communication.",
+        "Collaborated with interdisciplinary researchers and developers to translate experimental concepts into functional interactive prototypes.",
+        "Prototyped and iterated on emerging technology applications (VR, AI, audio-visual systems) for research-driven experiences.",
+        "Contributed to the design and development of educational and exploratory tools focused on engagement through immersive media."
       ]
     },
     {
       title: "Programmer, Level Designer",
       company: "Nicknation Games",
       period: "Nov 2025 - Present",
-      description: "Collaborating remotely with a primarily Hong Kong-based indie team to develop a top-down 3D roguelike action game.",
+      description: "Collaborate with a Hong Kong-based indie development team on an upcoming top-down 3D roguelike action game.",
       tech: ["Unity", "C#", "Level Design", "Boss Fight Mechanics"],
       achievements: [
         "Fixed gameplay bugs while maintaing code quality and smooth integration across time zones",
@@ -28,7 +31,7 @@ export default function Work() {
       title: "Programmer",
       company: "Eternal Blaze Studios",
       period: "Oct 2025 - Present",
-      description: "Developing game experience with focus on atmosphere, multiplayer aspects, and player engagement.",
+      description: "Assist in the development of a 3D co-op horror cooking game, including work toward a Steam demo and planned July 2026 release.",
       tech: ["Unity", "C#", "UI/UX", "Atmosphere Design"],
       achievements: [
         "Designed immersive horror atmosphere through dynamic lighting systems and visual effects programming",

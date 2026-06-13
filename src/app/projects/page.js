@@ -48,6 +48,19 @@ function ProjectsContent() {
   const projectCategories = {
     games: [
       {
+        title: "Another Order: Procedural Poetry Funhouse",
+        description: "A project that aims to use AI and VR to reimagine poetry as a physical space, using the philosophy of play-based learning to further student understanding of poetry and the process behind it.",
+        tech: ["Unreal Engine 5", "C++", "VR"],
+        color: "from-emerald-500 to-teal-500",
+        image: "/PoetryLogo.png",
+        additionalImages: ["poetry1.png", "poetry2.gif", "poetry3.gif", "poetry4.gif", "poetry5.png"],
+        inDevelopment: true,
+        furtherInfo: "Led a team of 2 developers and 1 designer on a $100K-funded VR project using AI and play-based learning to transform poetry into immersive educational experiences. Presented project progress to UBC stakeholders at a campus-wide emerging technologies showcase.",
+        links: [
+          { label: "Project Website", url: "https://eml.ubc.ca/projects/procedural-poetry-playhouse/", icon: true }
+        ]
+      },
+      {
         title: "Death Kitchen",
         description: "Fast-paced co-op cooking horror game where players serve dangerous alien customers.",
         tech: ["Unity", "C#", "Multiplayer"],
@@ -189,6 +202,17 @@ function ProjectsContent() {
     ],
     
     webApps: [
+      {
+        title: "EPISODE: Enhanced Practice for Integrated Simulation of Drug-Related Encounters",
+        description: "Tablet-based AI patient simulation that enables nursing students to practice a complete medication administration encounter using a realistic patient chatbot and automated performance feedback.",
+        tech: ["React", "AWS Bedrock", "AWS Polly", "AWS Transcribe"],
+        color: "from-orange-500 to-amber-400",
+        image: "/EPISODE.png",
+        furtherInfo: "Built text-to-speech and speech-to-text features using React, AWS Polly, and AWS Transcribe. Implemented a QR-code verification system for validating patient and medication data in healthcare simulation environments.",
+        links: [
+            { label: "Website", url: "https://eml.ubc.ca/projects/episode-enhanced-practice-for-integrated-simulation-of-drug-related-encounters/", icon: true},
+          ]
+      },
       {
         title: "DAhandler",
         description: "Legal workflow automation tool that syncs with Outlook calendars to streamline trial event management.",

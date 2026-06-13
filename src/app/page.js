@@ -86,9 +86,8 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Location tag */}
-        <p className="mt-12 text-sm text-[#64748B]">
-          📍 Based in Vancouver, BC
+        {/* Used to be location tag, now just spacer */}
+        <p className="mt-12">
         </p>
       </div>
     </div>

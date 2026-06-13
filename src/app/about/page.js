@@ -171,8 +171,9 @@ export default function About() {
           </div>
 
           <p className="text-lg text-[#1E293B] leading-relaxed">
-            Hi! I&apos;m Dana. I&apos;m a University of British Columbia student majoring in Cognitive Systems and minoring in Applied Music Technology. 
-            I love coding, music, and gaming! Throughout my degree, I have created interactive sound experiences through coding and design, and I&apos;m currently expanding my skills toward game development. 
+            Hi! I&apos;m Dana. I&apos;m currently working an internship as a Software Developer at the UBC Emerging Media Lab.
+            I recently graduated from UBC and attained my Bachelor of Arts degree with a major in Cognitive Systems and minor in Applied Music Technology.
+            I love coding, music, and gaming! Throughout my degree, I have created interactive sound experiences through coding and design. I&apos;m currently expanding my skills in game development, web development, and project leadership.
             Eventually, I want to bring creative systems to life in immersive, playable worlds! In my spare time nowadays, I like to read books and play PC games.</p>
         
           {/* Download Resume Button */}
@@ -187,7 +188,7 @@ export default function About() {
                 <polyline points="7 10 12 15 17 10"></polyline>
                 <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
-              Download Resume
+              Click here to download my resume!
             </a>
           </div>
 
